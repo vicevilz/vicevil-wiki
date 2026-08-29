@@ -5,10 +5,10 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 const plugins = [
-  {name: 'vElevators', description: 'Ascensores rápidos y configurables para tu servidor.', href: '/docs/velevators/'},
-  {name: 'vCombat', description: 'Control del combate y protección contra desconexiones.', href: '/docs/vcombat/'},
-  {name: 'vLottery', description: 'Sorteos y loterías integrados con la economía del servidor.', href: '/docs/vlottery/'},
-  {name: 'vStaff', description: 'Herramientas de moderación y gestión para el equipo.', href: '/docs/vstaff/'},
+  {name: 'vElevators', description: 'Instalación, comandos, permisos y configuración.', href: '/docs/velevators/'},
+  {name: 'vCombat', description: 'Instalación, comandos, permisos y configuración.', href: '/docs/vcombat/'},
+  {name: 'vLottery', description: 'Instalación, comandos, permisos y configuración.', href: '/docs/vlottery/'},
+  {name: 'vStaff', description: 'Instalación, comandos, permisos y configuración.', href: '/docs/vstaff/'},
 ];
 
 export default function Home(): ReactNode {
