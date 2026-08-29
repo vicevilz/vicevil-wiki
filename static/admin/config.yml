@@ -1,0 +1,70 @@
+backend:
+  name: github
+  repo: vicevilz/vicevil-wiki
+  branch: main
+  auth_scope: repo
+  base_url: https://auth.vicevil.wiki
+  auth_endpoint: auth
+  site_domain: vicevil.wiki
+
+media_folder: static/img/uploads
+public_folder: /img/uploads
+publish_mode: simple
+
+collections:
+  - name: velevators
+    label: vElevators
+    label_singular: Página de vElevators
+    folder: docs/velevators
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields: &doc_fields
+      - {label: Título, name: title, widget: string}
+      - {label: Posición, name: sidebar_position, widget: number, value_type: int, min: 1, required: false}
+      - {label: Descripción, name: description, widget: string, required: false}
+      - {label: Contenido, name: body, widget: markdown}
+  - name: vcombat
+    label: vCombat
+    label_singular: Página de vCombat
+    folder: docs/vcombat
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields: *doc_fields
+  - name: vlottery
+    label: vLottery
+    label_singular: Página de vLottery
+    folder: docs/vlottery
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields: *doc_fields
+  - name: vstaff
+    label: vStaff
+    label_singular: Página de vStaff
+    folder: docs/vstaff
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields: *doc_fields
+  - name: general
+    label: Wiki general
+    files:
+      - label: Inicio de la documentación
+        name: inicio
+        file: docs/inicio.md
+        fields: *doc_fields
+      - label: Recursos
+        name: recursos
+        file: docs/recursos.md
+        fields: *doc_fields
+
