@@ -29,3 +29,22 @@
 .navbar__title { letter-spacing: -.02em; }
 .footer { border-top: 1px solid rgba(255,255,255,.08); }
 
+.theme-doc-sidebar-menu > .theme-doc-sidebar-item-category {
+  margin-block: .65rem;
+}
+
+.theme-doc-sidebar-item-category > .menu__list-item-collapsible {
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: .45rem;
+  background: color-mix(in srgb, var(--ifm-color-primary) 11%, transparent);
+}
+
+.theme-doc-sidebar-item-category > .menu__list-item-collapsible > .menu__link {
+  font-weight: 750;
+}
+
+.theme-doc-sidebar-item-category > .menu__list {
+  margin-left: .65rem;
+  padding-left: .7rem;
+  border-left: 1px solid var(--ifm-color-emphasis-300);
+}

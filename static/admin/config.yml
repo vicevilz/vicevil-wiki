@@ -12,59 +12,100 @@ public_folder: /img/uploads
 publish_mode: simple
 
 collections:
-  - name: velevators
-    label: vElevators
-    label_singular: Página de vElevators
-    folder: docs/velevators
+  - name: documentation
+    label: Documentación
+    label_singular: Página
+    folder: docs
     create: true
     extension: md
     format: frontmatter
+    identifier_field: title
     slug: "{{slug}}"
-    summary: "{{title}}"
-    fields: &doc_fields
-      - {label: Título, name: title, widget: string}
-      - {label: Posición, name: sidebar_position, widget: number, value_type: int, min: 1, required: false}
-      - {label: Descripción, name: description, widget: string, required: false}
-      - {label: Contenido, name: body, widget: markdown}
-  - name: vcombat
-    label: vCombat
-    label_singular: Página de vCombat
-    folder: docs/vcombat
-    create: true
-    extension: md
-    format: frontmatter
-    slug: "{{slug}}"
-    summary: "{{title}}"
-    fields: *doc_fields
-  - name: vlottery
-    label: vLottery
-    label_singular: Página de vLottery
-    folder: docs/vlottery
-    create: true
-    extension: md
-    format: frontmatter
-    slug: "{{slug}}"
-    summary: "{{title}}"
-    fields: *doc_fields
-  - name: vstaff
-    label: vStaff
-    label_singular: Página de vStaff
-    folder: docs/vstaff
-    create: true
-    extension: md
-    format: frontmatter
-    slug: "{{slug}}"
-    summary: "{{title}}"
-    fields: *doc_fields
-  - name: general
-    label: Wiki general
-    files:
-      - label: Inicio de la documentación
-        name: inicio
-        file: docs/inicio.md
-        fields: *doc_fields
-      - label: Recursos
-        name: recursos
-        file: docs/recursos.md
-        fields: *doc_fields
-
+    summary: "{{title}} · {{dirname}}"
+    sortable_fields: [title, sidebar_position]
+    nested:
+      depth: 100
+      summary: "{{title}}"
+      subfolders: false
+    meta:
+      path:
+        widget: string
+        label: Ruta y carpeta
+        hint: "Ejemplos: mi-plugin/instalacion o 01-mi-plugin/02-comandos. Los prefijos numéricos ordenan la barra lateral y Docusaurus no los muestra."
+        index_file: index
+    fields:
+      - label: Título
+        name: title
+        widget: string
+      - label: Etiqueta de la barra lateral
+        name: sidebar_label
+        widget: string
+        required: false
+        hint: "Déjalo vacío para usar el título de la página."
+      - label: Posición en la barra lateral
+        name: sidebar_position
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+      - label: URL personalizada
+        name: slug
+        widget: string
+        required: false
+        hint: "Opcional. Si está vacío, la URL se obtiene de la ruta del archivo."
+      - label: Descripción
+        name: description
+        widget: text
+        required: false
+      - label: Palabras clave
+        name: keywords
+        widget: list
+        required: false
+      - label: Borrador
+        name: draft
+        widget: boolean
+        default: false
+        required: false
+      - label: Ocultar título
+        name: hide_title
+        widget: boolean
+        default: false
+        required: false
+      - label: Ocultar índice de la página
+        name: hide_table_of_contents
+        widget: boolean
+        default: false
+        required: false
+      - label: Nivel mínimo del índice
+        name: toc_min_heading_level
+        widget: select
+        options: [2, 3, 4, 5, 6]
+        default: 2
+        required: false
+      - label: Nivel máximo del índice
+        name: toc_max_heading_level
+        widget: select
+        options: [2, 3, 4, 5, 6]
+        default: 3
+        required: false
+      - label: Contenido
+        name: body
+        widget: richtext
+        modes: [rich_text, raw]
+        buttons:
+          - bold
+          - italic
+          - strikethrough
+          - code
+          - link
+          - heading-one
+          - heading-two
+          - heading-three
+          - heading-four
+          - heading-five
+          - heading-six
+          - quote
+          - bulleted-list
+          - numbered-list
+        editor_components: [image, code-block, docusaurus-admonition, docusaurus-details, docusaurus-tabs]
+        hint: "El modo visual incluye formato, imágenes, código, avisos, desplegables y pestañas. Usa el modo raw para tablas, HTML, JSX, componentes React y cualquier sintaxis MDX avanzada."

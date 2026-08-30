@@ -21,6 +21,10 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/vicevilz/vicevil-wiki/edit/main/',
+          admonitions: {
+            keywords: ['caution'],
+            extendDefaults: true,
+          },
         },
         blog: false,
         theme: {customCss: './src/css/custom.css'},
@@ -39,8 +43,7 @@ const config: Config = {
       title: 'Vicevil Wiki',
       logo: {alt: 'Logotipo de Vicevil Wiki', src: 'img/logo.svg'},
       items: [
-        {type: 'docSidebar', sidebarId: 'pluginsSidebar', position: 'left', label: 'Plugins'},
-        {to: '/docs/recursos', label: 'Recursos', position: 'left'},
+        {type: 'docSidebar', sidebarId: 'wikiSidebar', position: 'left', label: 'Documentación'},
         {href: 'https://vicevil.wiki/admin/', label: 'Editar', position: 'right'},
         {href: 'https://github.com/vicevilz/vicevil-wiki', label: 'GitHub', position: 'right'},
       ],
@@ -49,19 +52,15 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Plugins',
+          title: 'Wiki',
           items: [
-            {label: 'vElevators', to: '/docs/velevators/'},
-            {label: 'vCombat', to: '/docs/vcombat/'},
-            {label: 'vLottery', to: '/docs/vlottery/'},
-            {label: 'vStaff', to: '/docs/vstaff/'},
+            {label: 'Documentación', to: '/docs/'},
+            {label: 'Panel de edición', href: 'https://vicevil.wiki/admin/'},
           ],
         },
         {
-          title: 'Wiki',
+          title: 'Proyecto',
           items: [
-            {label: 'Recursos', to: '/docs/recursos'},
-            {label: 'Panel de edición', href: 'https://vicevil.wiki/admin/'},
             {label: 'Repositorio', href: 'https://github.com/vicevilz/vicevil-wiki'},
           ],
         },
@@ -73,4 +72,3 @@ const config: Config = {
 };
 
 export default config;
-
