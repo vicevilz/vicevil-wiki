@@ -5,6 +5,18 @@
       "document": "docs/inicio.mdx",
       "label": "Inicio",
       "_template": "doc"
+    },
+    {
+      "label": "vLottery",
+      "link": "generated",
+      "items": [
+        {
+          "document": "docs/vLottery/Prueba.mdx",
+          "label": "Prueba",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
     }
   ]
 }
