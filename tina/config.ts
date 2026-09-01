@@ -12,7 +12,7 @@ const docReference: any = {
     }),
   },
   fields: [
-    {name: 'document', label: 'Documento', type: 'reference', collections: ['documentation'], required: true},
+    {name: 'document', label: 'Documento', type: 'reference', collections: ['doc'], required: true},
     {name: 'label', label: 'Nombre en la barra lateral', type: 'string', required: true},
   ],
 };
@@ -65,7 +65,7 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: 'documentation',
+        name: 'doc',
         label: 'Documentación',
         path: 'docs',
         format: 'mdx',
