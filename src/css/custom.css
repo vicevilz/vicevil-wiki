@@ -25,6 +25,8 @@
   --ifm-navbar-background-color: rgba(15,16,24,.92);
   --docusaurus-highlighted-code-line-bg: rgba(157, 145, 255, .14);
 }
+.wiki-theme-root { --ifm-color-primary: var(--wiki-primary-light, #6252e8); min-height: 100vh; }
+html[data-theme='dark'] .wiki-theme-root { --ifm-color-primary: var(--wiki-primary-dark, #9d91ff); }
 .navbar { backdrop-filter: blur(14px); }
 .navbar__title { letter-spacing: -.02em; }
 .footer { border-top: 1px solid rgba(255,255,255,.08); }

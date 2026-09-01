@@ -30,6 +30,9 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
       - name: Build
+        env:
+          TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
         run: npm run build
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'
@@ -54,4 +57,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

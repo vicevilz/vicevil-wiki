@@ -1,0 +1,10 @@
+{
+  "label": "Navegación de la documentación",
+  "items": [
+    {
+      "document": "docs/inicio.mdx",
+      "label": "Inicio",
+      "_template": "doc"
+    }
+  ]
+}

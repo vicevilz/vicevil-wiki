@@ -1,11 +1,26 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import settings from './config/site/settings.json';
+
+const navbarItems = [
+  {type: 'docSidebar' as const, sidebarId: 'wikiSidebar', position: 'left' as const, label: 'Documentación'},
+  ...settings.navbar.map((item) => ({
+    label: item.label,
+    href: item.href,
+    position: item.position as 'left' | 'right',
+  })),
+];
+
+const footerLinks = settings.footer.map((group) => ({
+  title: group.title,
+  items: group.items.map((item) => ({label: item.label, href: item.href})),
+}));
 
 const config: Config = {
-  title: 'Vicevil Wiki',
-  tagline: 'Documentación oficial de los plugins de Vicevil',
-  favicon: 'img/favicon.svg',
+  title: settings.title,
+  tagline: settings.tagline,
+  favicon: settings.favicon.replace(/^\//, ''),
   url: 'https://vicevil.wiki',
   baseUrl: '/',
   organizationName: 'vicevilz',
@@ -20,11 +35,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/vicevilz/vicevil-wiki/edit/main/',
-          admonitions: {
-            keywords: ['caution'],
-            extendDefaults: true,
-          },
+          editUrl: 'https://vicevil.wiki/admin/',
+          admonitions: {keywords: ['caution'], extendDefaults: true},
         },
         blog: false,
         theme: {customCss: './src/css/custom.css'},
@@ -33,39 +45,31 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    image: 'img/social-card.svg',
-    colorMode: {defaultMode: 'dark', respectPrefersColorScheme: true},
+    image: settings.socialCard.replace(/^\//, ''),
+    colorMode: {
+      defaultMode: settings.defaultColorMode as 'light' | 'dark',
+      respectPrefersColorScheme: true,
+    },
     metadata: [
-      {name: 'theme-color', content: '#6d5dfc'},
-      {name: 'keywords', content: 'Vicevil, Minecraft, plugins, documentación'},
+      {name: 'theme-color', content: settings.primaryColor},
+      {name: 'keywords', content: settings.keywords.join(', ')},
     ],
+    announcementBar: settings.announcement.enabled ? {
+      id: 'wiki-announcement',
+      content: settings.announcement.content,
+      backgroundColor: settings.announcement.backgroundColor,
+      textColor: settings.announcement.textColor,
+      isCloseable: settings.announcement.isCloseable,
+    } : undefined,
     navbar: {
-      title: 'Vicevil Wiki',
-      logo: {alt: 'Logotipo de Vicevil Wiki', src: 'img/logo.svg'},
-      items: [
-        {type: 'docSidebar', sidebarId: 'wikiSidebar', position: 'left', label: 'Documentación'},
-        {href: 'https://vicevil.wiki/admin/', label: 'Editar', position: 'right'},
-        {href: 'https://github.com/vicevilz/vicevil-wiki', label: 'GitHub', position: 'right'},
-      ],
+      title: settings.title,
+      logo: {alt: `Logotipo de ${settings.title}`, src: settings.logo.replace(/^\//, '')},
+      items: navbarItems,
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Wiki',
-          items: [
-            {label: 'Documentación', to: '/docs/'},
-            {label: 'Panel de edición', href: 'https://vicevil.wiki/admin/'},
-          ],
-        },
-        {
-          title: 'Proyecto',
-          items: [
-            {label: 'Repositorio', href: 'https://github.com/vicevilz/vicevil-wiki'},
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Vicevil. Construido con Docusaurus.`,
+      links: footerLinks,
+      copyright: settings.copyright,
     },
     prism: {theme: prismThemes.github, darkTheme: prismThemes.dracula},
   } satisfies Preset.ThemeConfig,

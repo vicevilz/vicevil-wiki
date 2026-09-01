@@ -164,4 +164,3 @@ export const wikiMdxTemplates: any[] = [
   stepsTemplate,
   galleryTemplate,
 ];
-
