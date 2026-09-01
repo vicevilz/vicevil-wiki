@@ -35,7 +35,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://vicevil.wiki/admin/',
+          editUrl: ({permalink}) => `https://vicevil.wiki/admin/#/~${permalink}`,
           admonitions: {keywords: ['caution'], extendDefaults: true},
         },
         blog: false,
