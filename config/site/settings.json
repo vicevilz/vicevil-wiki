@@ -1,14 +1,14 @@
 {
-  "label": "Configuración de Vicevil Wiki",
+  "label": "Vicevil Wiki settings",
   "title": "Vicevil Wiki",
-  "tagline": "Documentación oficial de los plugins de Vicevil",
+  "tagline": "Official documentation for Vicevil plugins",
   "favicon": "/img/favicon.svg",
   "logo": "/img/logo.svg",
   "socialCard": "/img/social-card.svg",
   "primaryColor": "#6252e8",
   "darkPrimaryColor": "#9d91ff",
   "defaultColorMode": "dark",
-  "keywords": ["Vicevil", "Minecraft", "plugins", "documentación"],
+  "keywords": ["Vicevil", "Minecraft", "plugins", "documentation"],
   "announcement": {
     "enabled": false,
     "content": "",
@@ -17,23 +17,23 @@
     "isCloseable": true
   },
   "navbar": [
-    {"label": "Editar", "href": "https://vicevil.wiki/admin/", "position": "right"},
+    {"label": "Edit", "href": "https://vicevil.wiki/admin/", "position": "right"},
     {"label": "GitHub", "href": "https://github.com/vicevilz/vicevil-wiki", "position": "right"}
   ],
   "footer": [
     {
       "title": "Wiki",
       "items": [
-        {"label": "Documentación", "href": "/docs/"},
-        {"label": "Panel de edición", "href": "https://vicevil.wiki/admin/"}
+        {"label": "Documentation", "href": "/docs/"},
+        {"label": "Editing panel", "href": "https://vicevil.wiki/admin/"}
       ]
     },
     {
-      "title": "Proyecto",
+      "title": "Project",
       "items": [
-        {"label": "Repositorio", "href": "https://github.com/vicevilz/vicevil-wiki"}
+        {"label": "Repository", "href": "https://github.com/vicevilz/vicevil-wiki"}
       ]
     }
   ],
-  "copyright": "Copyright © 2026 Vicevil. Construido con Docusaurus y TinaCMS."
+  "copyright": "Copyright © 2026 Vicevil. Built with Docusaurus and TinaCMS."
 }

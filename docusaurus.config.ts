@@ -4,12 +4,13 @@ import type * as Preset from '@docusaurus/preset-classic';
 import settings from './config/site/settings.json';
 
 const navbarItems = [
-  {type: 'docSidebar' as const, sidebarId: 'wikiSidebar', position: 'left' as const, label: 'Documentación'},
+  {type: 'docSidebar' as const, sidebarId: 'wikiSidebar', position: 'left' as const, label: 'Documentation'},
   ...settings.navbar.map((item) => ({
     label: item.label,
     href: item.href,
     position: item.position as 'left' | 'right',
   })),
+  {type: 'localeDropdown' as const, position: 'right' as const},
 ];
 
 const footerLinks = settings.footer.map((group) => ({
@@ -28,7 +29,18 @@ const config: Config = {
   trailingSlash: false,
   onBrokenLinks: 'throw',
   future: {v4: true},
-  i18n: {defaultLocale: 'es', locales: ['es']},
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es', 'de', 'pt-BR', 'pl', 'fr'],
+    localeConfigs: {
+      en: {label: 'English', htmlLang: 'en'},
+      es: {label: 'Español', htmlLang: 'es'},
+      de: {label: 'Deutsch', htmlLang: 'de'},
+      'pt-BR': {label: 'Português (Brasil)', htmlLang: 'pt-BR'},
+      pl: {label: 'Polski', htmlLang: 'pl'},
+      fr: {label: 'Français', htmlLang: 'fr'},
+    },
+  },
   presets: [
     [
       'classic',
@@ -63,7 +75,7 @@ const config: Config = {
     } : undefined,
     navbar: {
       title: settings.title,
-      logo: {alt: `Logotipo de ${settings.title}`, src: settings.logo.replace(/^\//, '')},
+      logo: {alt: `${settings.title} logo`, src: settings.logo.replace(/^\//, '')},
       items: navbarItems,
     },
     footer: {

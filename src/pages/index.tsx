@@ -1,5 +1,9 @@
 import {Redirect} from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Home() {
-  return <Redirect to="/docs" />;
+  const {i18n: {currentLocale, defaultLocale}} = useDocusaurusContext();
+  const localePrefix = currentLocale === defaultLocale ? '' : `/${currentLocale}`;
+
+  return <Redirect to={`${localePrefix}/docs`} />;
 }
