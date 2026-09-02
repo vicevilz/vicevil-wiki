@@ -2,17 +2,87 @@
   "label": "Navegación de la documentación",
   "items": [
     {
-      "document": "docs/inicio.mdx",
-      "label": "Inicio",
-      "_template": "doc"
-    },
-    {
       "label": "vLottery",
       "link": "generated",
       "items": [
         {
-          "document": "docs/vLottery/Prueba.mdx",
-          "label": "Prueba",
+          "document": "docs/vLottery/README.mdx",
+          "label": "Introducción",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/01-overview.mdx",
+          "label": "Características y compatibilidad",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/02-installation.mdx",
+          "label": "Instalación y actualización",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/03-player-quick-start.mdx",
+          "label": "Guía rápida para jugadores",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/04-lottery-mechanics.mdx",
+          "label": "Boletos, probabilidades, bote y premios",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/05-draw-scheduling.mdx",
+          "label": "Sorteos y programación",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/06-commands.mdx",
+          "label": "Comandos",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/07-permissions.mdx",
+          "label": "Permisos",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/08-configuration.mdx",
+          "label": "Configuración",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/09-menu-and-locales.mdx",
+          "label": "Menú e idiomas",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/10-placeholders.mdx",
+          "label": "Placeholders",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/11-discord-and-notifications.mdx",
+          "label": "Discord y notificaciones",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/12-data-and-backups.mdx",
+          "label": "Datos, copias y actualización",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/13-api-events.mdx",
+          "label": "API y eventos",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/14-troubleshooting.mdx",
+          "label": "Resolución de problemas",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/vLottery/15-faq-and-limitations.mdx",
+          "label": "Preguntas frecuentes y limitaciones",
           "_template": "doc"
         }
       ],

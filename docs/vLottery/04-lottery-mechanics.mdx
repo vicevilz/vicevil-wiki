@@ -1,0 +1,39 @@
+---
+title: Boletos, probabilidades, bote y premios
+sidebar_label: Boletos, probabilidades, bote y premios
+---
+
+# Boletos, probabilidades, bote y premios
+
+## Bote y jackpot
+
+Todas las compras y donaciones administrativas aumentan el bote. El jackpot se calcula así:
+
+```text
+jackpot = bote × draw.portion
+```
+
+Se redondea hacia abajo usando los decimales admitidos por el proveedor económico. El remanente permanece en el bote para la ronda siguiente.
+
+## Selección del ganador
+
+La selección es ponderada por boletos sin materializar una lista por boleto. Cada boleto tiene el mismo peso. Al completarse una ronda ganadora:
+
+- Se limpia la lista de boletos activos.
+- Se incrementa el total de sorteos.
+- Se actualizan victorias, total ganado, mayor premio e historial del ganador.
+- Se crea una obligación de premio persistente antes de depositar mediante Vault.
+
+## Participantes insuficientes
+
+Si hay menos jugadores distintos que `draw.min-players`, la ronda se cierra sin ganador, pero el bote y los boletos permanecen para el siguiente sorteo. También aumenta el contador de sorteos cerrados. Esta regla se aplica a sorteos automáticos y manuales.
+
+## Premios desconectados
+
+Vault intenta depositar el premio aunque el jugador esté desconectado. Al volver a entrar recibe un aviso persistente. Los depósitos pendientes se reintentan al arrancar y cuando entra un jugador.
+
+## Buffs de participación
+
+El pool base es `boletos totales × secondsPerTicket`, sujeto a mínimos y máximos globales. Se distribuye proporcionalmente y se redondea por `roundUnitSeconds`.
+
+Si `applyToWinners` es `false`, el ganador no recibe buffs y su parte se redistribuye entre los participantes elegibles. En cada efecto, duración `0` usa la asignación calculada; una duración mayor que cero es fija.

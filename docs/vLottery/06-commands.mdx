@@ -1,0 +1,22 @@
+---
+title: Comandos
+sidebar_label: Comandos
+---
+
+# Comandos
+
+Comando principal: `/vlottery`. Aliases: `/vlotto`, `/lottery` y `/lotto`.
+
+| Comando | Función | Permiso | Consola |
+|---|---|---|---|
+| `/vlottery` | Resumen de la ronda | `vlottery.use` | Sí |
+| `/vlottery buy <cantidad>` | Compra boletos | `vlottery.buy` | No |
+| `/vlottery leaderboard` | Clasificación de la ronda | `vlottery.leaderboard` | Sí |
+| `/vlottery status` | Estado; añade datos técnicos para admin/consola | `vlottery.status` | Sí |
+| `/vlottery donate <cantidad> [private]` | Añade dinero administrativamente al bote | `vlottery.admin.donate` | Sí |
+| `/vlottery raffle` | Ejecuta un sorteo manual | `vlottery.admin.raffle` | Sí |
+| `/vlottery reload` | Recarga configuración, idioma, horario y menú | `vlottery.admin.reload` | Sí |
+
+`donate` no retira saldo del ejecutor: incrementa directamente el bote. Con `private` se omiten anuncio público, Discord y anuncio de hitos; el ejecutor sí recibe confirmación.
+
+El autocompletado de `buy` propone `1`, `5`, `10`, `25`, `50`, `75` y `100`, pero se acepta cualquier entero positivo dentro del rango seguro.

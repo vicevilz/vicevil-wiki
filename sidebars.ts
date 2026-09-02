@@ -15,6 +15,7 @@ const getDocId = (document: string) => document
   .replace(/\.mdx?$/, '')
   .split('/')
   .slice(1)
+  .map((segment) => segment.replace(/^\d+-/, ''))
   .join('/');
 
 const toSidebarItem = (item: NavigationItem): unknown[] => {

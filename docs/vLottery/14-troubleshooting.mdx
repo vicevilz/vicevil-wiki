@@ -1,0 +1,34 @@
+---
+title: Resolución de problemas
+sidebar_label: Resolución de problemas
+---
+
+# Resolución de problemas
+
+## El plugin se desactiva al arrancar
+
+Verifica Java 21, Paper compatible, las cuatro dependencias y un proveedor económico en Vault. El mensaje `Vault did not expose an economy provider` significa que Vault está presente pero no hay economía registrada.
+
+## La recarga se rechaza
+
+Revisa la primera causa en consola: locale, cron, zona, efectos, rangos, webhook o menú activo. La configuración anterior permanece funcionando.
+
+## El menú muestra `%...%`
+
+Instala las expansiones Formatter, Math y Utils, y vTime; después ejecuta la recarga adecuada de PlaceholderAPI/DeluxeMenus. Comprueba también que el locale activo tiene un `loteria.yml` válido.
+
+## El próximo sorteo no se acepta
+
+Usa días ingleses abreviados y hora `HH:mm`: `sat 02:46`. Para manual, usa exactamente `0`.
+
+## No hay ganador
+
+Comprueba jugadores distintos, no boletos totales. `draw.min-players: 2` exige dos participantes diferentes. Bote y boletos pasan a la siguiente ronda.
+
+## Un premio queda pendiente
+
+No borres `pending-prizes`. Revisa el proveedor Vault y la consola; el plugin reintenta. Haz una copia antes de cualquier intervención manual.
+
+## Discord no envía
+
+Comprueba los dos interruptores, webhook no vacío, el toggle del evento y avisos HTTP/rate limit en consola. Las donaciones privadas no se envían por diseño.

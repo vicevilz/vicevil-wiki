@@ -1,0 +1,34 @@
+---
+title: Menú e idiomas
+sidebar_label: Menú e idiomas
+---
+
+# Menú e idiomas
+
+## Idiomas disponibles
+
+`en_US`, `es_ES`, `de_DE`, `fr_FR`, `pt_BR` y `pl_PL`.
+
+Los mensajes se guardan en `plugins/vLottery/lang/`. El menú de cada idioma se instala en:
+
+```text
+plugins/DeluxeMenus/gui_menus/vLottery/<locale>/loteria.yml
+```
+
+Solo el locale activo se registra como menú `vlottery` en `DeluxeMenus/config.yml`. Cambia `locale` y ejecuta `/vlottery reload`.
+
+## Menú incluido
+
+- Comando de apertura: `/loteria`.
+- Tamaño: 54 slots.
+- Actualización visual: cada segundo.
+- Paquetes de compra: 1, 5, 10, 25, 50, 75 y 100 boletos.
+- Acceso a bote, próximo sorteo, boletos propios, participantes, estadísticas y clasificación.
+
+## Dependencias de formato
+
+El menú usa placeholders compuestos de Formatter, Math, Utils y vTime. Si falta una expansión, parte del texto puede aparecer sin resolver aunque vLottery funcione.
+
+## Personalización segura
+
+Los menús personalizados no se sobrescriben. La actualización 0.1.1 solo sustituye menús originales reconocidos de 1.0.0 y crea una copia `loteria.yml.vlottery-1.0.0-backup-<fecha>`. También se respalda `DeluxeMenus/config.yml` al modificar la ruta activa.

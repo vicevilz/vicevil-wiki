@@ -1,0 +1,38 @@
+---
+title: Características y compatibilidad
+sidebar_label: Características y compatibilidad
+---
+
+# Características y compatibilidad
+
+vLottery permite comprar boletos con la economía del servidor. Cada boleto representa el mismo peso en el sorteo, por lo que un jugador con más boletos tiene una probabilidad proporcionalmente mayor.
+
+## Funciones confirmadas
+
+- Boletos con precio configurable y cobro mediante Vault.
+- Bote persistente, jackpot parcial y rollover.
+- Sorteos automáticos, manuales y recuperación de un sorteo vencido.
+- Programación semanal y zona horaria configurables.
+- Premios a jugadores conectados o desconectados.
+- Buffs de participación distribuidos por peso.
+- Estadísticas, clasificación y PlaceholderAPI.
+- Menú DeluxeMenus en seis idiomas.
+- Webhook de Discord con cola, límite de envío y reintentos.
+- Eventos Bukkit públicos para compras, sorteos, premios y cambios del bote.
+
+## Requisitos
+
+| Componente | Requisito |
+|---|---|
+| Servidor | Paper con API 1.21 |
+| Java | Java 21 o posterior compatible |
+| LuckPerms | Obligatorio |
+| Vault | Obligatorio |
+| Proveedor económico | Obligatorio y registrado en Vault |
+| PlaceholderAPI | Obligatorio |
+| DeluxeMenus | Obligatorio |
+| Formatter, Math, Utils y vTime | Necesarios para todos los formatos compuestos del menú incluido |
+
+## Compatibilidad verificada
+
+La versión correctiva 0.1.1 usa bytecode Java 21 y fue validada en Paper 1.21 y Paper 1.21.11. No se afirma compatibilidad funcional completa con Spigot, Folia u otras versiones no probadas.

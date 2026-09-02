@@ -1,0 +1,37 @@
+---
+title: Datos, copias y actualización
+sidebar_label: Datos, copias y actualización
+---
+
+# Datos, copias y actualización
+
+## Archivos
+
+| Archivo | Función |
+|---|---|
+| `config.yml` | Configuración principal |
+| `lang/<locale>.yml` | Mensajes |
+| `data.yml` | Ronda, bote, estadísticas y premios pendientes |
+| `data.yml.bak` | Copia anterior automática |
+| `sticky_notifications.yml` | Avisos y buffs para jugadores desconectados |
+| `sticky_notifications.yml.bak` | Copia anterior automática |
+
+`data.yml` usa escritura temporal y sustitución atómica cuando el sistema lo permite. Antes de cada sustitución guarda `data.yml.bak`.
+
+## Copia segura
+
+1. Detén el servidor.
+2. Copia toda la carpeta `plugins/vLottery/`.
+3. Copia `plugins/DeluxeMenus/config.yml` y `gui_menus/vLottery/`.
+4. Conserva juntos archivo principal y `.bak`.
+
+No edites `data.yml` ni `sticky_notifications.yml` con el servidor activo. Las claves de jugadores deben ser UUID reales. Un esquema distinto de `1` o YAML inválido impide una carga segura.
+
+## Contenido de `data.yml`
+
+- `round`: ID, próximo sorteo, recordatorio y boletos activos.
+- `global`: bote, sorteos, boletos históricos, premios pagados, mayor premio e hito.
+- `players`: estadísticas e historial de victorias por UUID.
+- `pending-prizes`: depósitos pendientes o en conciliación.
+
+No migres datos de otro plugin sin un mapeo específico y una copia completa.

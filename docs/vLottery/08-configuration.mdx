@@ -1,0 +1,73 @@
+---
+title: Configuración
+sidebar_label: Configuración
+---
+
+# Configuración
+
+Archivo: `plugins/vLottery/config.yml`. Una recarga inválida se rechaza y conserva la configuración válida anterior.
+
+## General, economía y sorteo
+
+| Clave | Predeterminado | Regla |
+|---|---:|---|
+| `locale` | `en_US` | `en_US`, `es_ES`, `de_DE`, `fr_FR`, `pt_BR` o `pl_PL` |
+| `economy.currency-name` | vacío | Vacío usa el plural de Vault; admite texto y PlaceholderAPI |
+| `ticket.price` | `100.0` | Decimal mayor que cero |
+| `draw.cron` | `wed 18:00, sun 12:00` | Lista semanal estricta o `0` |
+| `draw.timezone` | `Europe/Madrid` | Zona IANA válida |
+| `draw.portion` | `0.88` | Decimal entre 0 y 1 |
+| `draw.min-players` | `2` | Entero mínimo 1 |
+| `pot-milestone-thresholds` | vacío | Decimales positivos separados por comas; vacío desactiva |
+| `reminder.minutes` | `0` | Entero no negativo; 0 desactiva |
+
+No incluyas `%vlottery_currency%` dentro de `currency-name`: se evita la recursión y se usa el nombre de Vault.
+
+## Anuncios
+
+| Clave | Predeterminado | Regla |
+|---|---:|---|
+| `broadcast.reminders` | `false` | Anuncio de recordatorio en juego |
+| `broadcast.winners` | `true` | Anuncio del ganador en juego |
+| `broadcast.title.enabled` | `true` | Título del ganador |
+| `broadcast.title.fade-in` | `10` | Ticks, entre 1 y 100 |
+| `broadcast.title.stay` | `70` | Ticks, entre 1 y 100 |
+| `broadcast.title.fade-out` | `20` | Ticks, entre 1 y 100 |
+
+## Buffs
+
+Raíz: `lottery.buffs.perTicket`.
+
+| Clave | Predeterminado | Regla |
+|---|---:|---|
+| `lottery.buffs.perTicket.enabled` | `true` | Activa buffs tras una ronda ganadora |
+| `lottery.buffs.perTicket.secondsPerTicket` | `30` | Segundos no negativos por boleto |
+| `lottery.buffs.perTicket.roundUnitSeconds` | `60` | Unidad de reparto, mínimo 1 |
+| `lottery.buffs.perTicket.minPerPlayerSeconds` | ausente | Mínimo opcional no negativo |
+| `lottery.buffs.perTicket.maxPerPlayerSeconds` | ausente | Máximo opcional no negativo |
+| `lottery.buffs.perTicket.globalPoolMinSeconds` | ausente | Mínimo global opcional |
+| `lottery.buffs.perTicket.globalPoolMaxSeconds` | ausente | Máximo global opcional |
+| `lottery.buffs.perTicket.effects` | `SPEED:1:0`, `LUCK:1:0` | Lista `EFFECT:AMPLIFIER:DURATION` |
+| `lottery.buffs.perTicket.applyToWinners` | `true` | Incluye al ganador |
+
+El amplificador es el valor interno de Bukkit: `0` corresponde al nivel I y `1` al nivel II. Duración `0` usa el reparto calculado.
+
+## Mensajería y Discord
+
+| Clave | Predeterminado | Regla |
+|---|---:|---|
+| `messaging.enabled` | `true` | Interruptor general de mensajería externa |
+| `messaging.queue.capacity` | `1000` | Entero positivo |
+| `messaging.rate-limit.capacity` | `5` | Tokens máximos, positivo |
+| `messaging.rate-limit.refill-tokens` | `5` | Tokens por recarga, positivo |
+| `messaging.rate-limit.refill-period-seconds` | `2` | Periodo positivo |
+| `messaging.retry.max-attempts` | `3` | Intentos positivos |
+| `messaging.backends.discord.enabled` | `true` | Activa backend |
+| `messaging.backends.discord.webhooks.default` | vacío | URL del webhook; vacío desactiva envíos |
+| `messaging.backends.discord.username` | `vLottery` | Nombre mostrado |
+| `messaging.backends.discord.avatar-url` | vacío | Avatar opcional |
+| `messaging.notifications.draw-reminders` | `true` | Discord: recordatorios |
+| `messaging.notifications.winners` | `true` | Discord: ganadores |
+| `messaging.notifications.draw-cancelled` | `true` | Discord: rollover |
+| `messaging.notifications.pot-donations` | `true` | Discord: donaciones públicas |
+| `messaging.notifications.pot-milestones` | `true` | Discord: hitos |

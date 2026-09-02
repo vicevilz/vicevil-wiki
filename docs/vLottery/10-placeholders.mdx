@@ -1,0 +1,29 @@
+---
+title: Placeholders de PlaceholderAPI
+sidebar_label: Placeholders
+---
+
+# Placeholders de PlaceholderAPI
+
+Identificador: `vlottery`.
+
+| Placeholder | Resultado | Requiere jugador |
+|---|---|---|
+| `%vlottery_jackpot%` | Premio calculado, sin formato decorativo | No |
+| `%vlottery_pot%` | Bote actual | No |
+| `%vlottery_tickets%` | Boletos del jugador; `0` sin contexto | Sí |
+| `%vlottery_tickets_<nombre>%` | Boletos del nombre indicado en la ronda actual | No |
+| `%vlottery_nextdraw%` | `yyyy-MM-dd HH:mm:ss` en la zona configurada o texto de modo manual | No |
+| `%vlottery_totaltickets%` | Boletos totales de la ronda | No |
+| `%vlottery_ticketprice%` | Precio unitario | No |
+| `%vlottery_players%` | Participantes distintos | No |
+| `%vlottery_totaldraws%` | Rondas cerradas, con o sin ganador | No |
+| `%vlottery_currency%` | Nombre configurado o plural informado por Vault | Opcional |
+
+Ejemplo con vTime:
+
+```text
+%vtime_corta_{vlottery_nextdraw}%
+```
+
+`%vlottery_nextdraw%` no es un contador: devuelve una fecha. El contador de `/vlottery status` no tiene placeholder propio.
