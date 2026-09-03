@@ -1,0 +1,33 @@
+---
+title: "Configuração"
+sidebar_label: "Configuração"
+---
+
+# Configuração
+
+Arquivo: `plugins/vLottery/config.yml`. Um reload inválido mantém as configurações anteriores.
+
+| Chave | Padrão | Regra |
+|---|---:|---|
+| `locale` | `en_US` | seis locales suportados |
+| `economy.currency-name` | vazio | Texto/placeholder; vazio usa Vault |
+| `ticket.price` | `100.0` | Maior que 0 |
+| `draw.cron` | `wed 18:00, sun 12:00` | Lista semanal ou `0` |
+| `draw.timezone` | `Europe/Madrid` | Zona IANA válida |
+| `draw.portion` | `0.88` | Entre 0 e 1 |
+| `draw.min-players` | `2` | Mínimo 1 |
+| `pot-milestone-thresholds` | vazio | Valores positivos separados por vírgula |
+| `reminder.minutes` | `0` | Não negativo |
+| `broadcast.reminders` / `winners` | `false` / `true` | Anúncios no jogo |
+| `broadcast.title.enabled` | `true` | Título do vencedor |
+| `broadcast.title.fade-in/stay/fade-out` | `10/70/20` | 1–100 ticks cada |
+
+Raiz dos buffs `lottery.buffs.perTicket`: `enabled`, `secondsPerTicket`, `roundUnitSeconds`, mínimos/máximos opcionais, `effects`, `applyToWinners`. Valores não negativos; mínimo não supera máximo. Amplificador `0` = nível I, `1` = nível II.
+
+Mensageria inclui interruptor geral, capacidade da fila, rate limit, tentativas, Discord habilitado/webhook/nome/avatar e toggles de lembrete, vencedor, cancelamento, doação e marco. Capacidades, períodos e tentativas devem ser positivos.
+
+Caminhos completos de mensageria: `messaging.enabled`, `messaging.queue.capacity`, `messaging.rate-limit.capacity`, `messaging.rate-limit.refill-tokens`, `messaging.rate-limit.refill-period-seconds`, `messaging.retry.max-attempts`, `messaging.backends.discord.enabled`, `messaging.backends.discord.webhooks.default`, `messaging.backends.discord.username`, `messaging.backends.discord.avatar-url`, `messaging.notifications.draw-reminders`, `messaging.notifications.winners`, `messaging.notifications.draw-cancelled`, `messaging.notifications.pot-donations` e `messaging.notifications.pot-milestones`.
+
+## Outros caminhos exatos
+
+Os caminhos completos agrupados acima são `broadcast.winners`, `broadcast.title.fade-in`, `broadcast.title.stay`, `broadcast.title.fade-out`, `lottery.buffs.perTicket.enabled`, `lottery.buffs.perTicket.secondsPerTicket`, `lottery.buffs.perTicket.roundUnitSeconds`, `lottery.buffs.perTicket.minPerPlayerSeconds`, `lottery.buffs.perTicket.maxPerPlayerSeconds`, `lottery.buffs.perTicket.globalPoolMinSeconds`, `lottery.buffs.perTicket.globalPoolMaxSeconds`, `lottery.buffs.perTicket.effects` e `lottery.buffs.perTicket.applyToWinners`.

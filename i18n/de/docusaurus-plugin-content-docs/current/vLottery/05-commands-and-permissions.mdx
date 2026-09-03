@@ -1,0 +1,22 @@
+---
+title: "Befehle und Berechtigungen"
+sidebar_label: "Befehle und Berechtigungen"
+---
+
+# Befehle und Berechtigungen
+
+Aliase: `/vlotto`, `/lottery`, `/lotto`.
+
+| Befehl | Berechtigung | Konsole |
+|---|---|---|
+| `/vlottery` | `vlottery.use` | Ja |
+| `/vlottery buy <Anzahl>` | `vlottery.buy` | Nein |
+| `/vlottery leaderboard` | `vlottery.leaderboard` | Ja |
+| `/vlottery status` | `vlottery.status` | Ja |
+| `/vlottery donate <Betrag> [private]` | `vlottery.admin.donate` | Ja |
+| `/vlottery raffle` | `vlottery.admin.raffle` | Ja |
+| `/vlottery reload` | `vlottery.admin.reload` | Ja |
+
+`donate` erhöht den Pot direkt und belastet den Absender nicht. `private` unterdrückt öffentliche, Discord- und Meilenstein-Meldungen.
+
+`use`, `buy`, `leaderboard`, `status` und `notify` sind standardmäßig `true`; `vlottery.admin` und Kinder `op`. `vlottery.notify` steuert empfangene Meldungen und Titel.

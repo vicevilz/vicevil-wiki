@@ -1,0 +1,17 @@
+---
+title: "Troubleshooting, FAQ and limitations"
+sidebar_label: "Troubleshooting, FAQ and limitations"
+---
+
+# Troubleshooting, FAQ and limitations
+
+- **Startup failure:** verify Java 21, Paper, all dependencies and a Vault economy provider.
+- **Reload rejected:** inspect locale, cron, zone, effects, ranges, webhook and YAML; previous settings remain active.
+- **Raw `%...%` in menu:** install Formatter, Math, Utils and vTime, then reload PlaceholderAPI/DeluxeMenus.
+- **No winner:** `draw.min-players` counts distinct players, not tickets.
+- **Pending prize:** do not delete `pending-prizes`; repair Vault and let retries continue.
+- **No Discord message:** check switches, webhook, event toggle and HTTP warnings.
+
+More tickets improve odds but never guarantee a win. The jackpot equals the full pot only with `draw.portion: 1`. Manual draws obey the minimum, and `draw.cron: "0"` selects manual mode.
+
+Vault has no universal idempotency key. Persistence and reconciliation reduce risk but cannot guarantee an outcome if the process stops at the exact external-deposit boundary. [Not verified] No real Discord webhook or final graphical review was performed; Formatter, Math and Utils were not functionally tested in the isolated runtime.

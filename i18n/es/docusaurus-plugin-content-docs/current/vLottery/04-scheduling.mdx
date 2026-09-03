@@ -1,0 +1,20 @@
+---
+title: "Programación de sorteos"
+sidebar_label: "Programación de sorteos"
+---
+
+# Programación de sorteos
+
+`draw.cron` usa una lista semanal, no cron UNIX:
+
+```yaml
+draw:
+  cron: "wed 18:00, sun 12:00"
+  timezone: "Europe/Madrid"
+```
+
+Días: `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`. La hora exige `HH:mm`; `02:46` es válido y `2:46` no. Usa `draw.cron: "0"` para sorteos solo manuales.
+
+Los recordatorios requieren `reminder.minutes > 0` y `broadcast.reminders: true`. Si al arrancar hay una fecha vencida, se ejecuta un único sorteo `RECOVERY` y se calcula la siguiente fecha.
+
+`draw.min-players` también afecta a `/vlottery raffle`. Si otro plugin cancela `LotteryPreDrawEvent`, la ronda queda intacta.

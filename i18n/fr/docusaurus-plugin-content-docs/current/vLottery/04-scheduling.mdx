@@ -1,0 +1,20 @@
+---
+title: "Planification des tirages"
+sidebar_label: "Planification des tirages"
+---
+
+# Planification des tirages
+
+`draw.cron` est une liste hebdomadaire, pas un cron UNIX :
+
+```yaml
+draw:
+  cron: "wed 18:00, sun 12:00"
+  timezone: "Europe/Madrid"
+```
+
+Jours : `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`. L'heure exige `HH:mm` ; `02:46` est valide, `2:46` ne l'est pas. `draw.cron: "0"` active uniquement les tirages manuels.
+
+Les rappels exigent `reminder.minutes > 0` et `broadcast.reminders: true`. Si la date enregistrée est dépassée au démarrage, un seul tirage `RECOVERY` est exécuté.
+
+`draw.min-players` s'applique aussi à `/vlottery raffle`. L'annulation de `LotteryPreDrawEvent` laisse le tour intact.

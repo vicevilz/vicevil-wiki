@@ -1,0 +1,21 @@
+---
+title: "API y eventos"
+sidebar_label: "API y eventos"
+---
+
+# API y eventos
+
+Paquete: `net.vicevil.vlottery.api.event`.
+
+| Evento | Cancelable | Datos |
+|---|---:|---|
+| `LotteryTicketPurchaseEvent` | Sí | ronda, jugador, boletos y precios |
+| `LotteryPreDrawEvent` | Sí | trigger y snapshot |
+| `LotteryDrawEvent` | No | trigger, snapshot, ganador y premio |
+| `LotteryWinEvent` | No | ronda, ganador, premio e ID |
+| `LotteryPotChangeEvent` | No | bote anterior/nuevo, delta, causa y actor |
+| `LotteryRoundCancelEvent` | No | trigger, snapshot y motivo |
+
+`DrawTrigger`: `AUTOMATIC`, `MANUAL`, `RECOVERY`. `PotChangeCause`: `TICKET_PURCHASE`, `DONATION`, `PRIVATE_DONATION`, `PRIZE_PAYOUT`. `RoundCancelReason`: `MINIMUM_PLAYERS`.
+
+`LotteryRoundSnapshot` contiene ronda, bote, jackpot, mapa UUID→boletos, participantes y total. Cancelar una compra evita el cobro; cancelar el pre-sorteo deja la ronda intacta.

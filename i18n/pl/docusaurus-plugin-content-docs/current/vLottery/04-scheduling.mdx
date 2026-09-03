@@ -1,0 +1,20 @@
+---
+title: "Harmonogram losowań"
+sidebar_label: "Harmonogram losowań"
+---
+
+# Harmonogram losowań
+
+`draw.cron` to lista tygodniowa, nie cron UNIX:
+
+```yaml
+draw:
+  cron: "wed 18:00, sun 12:00"
+  timezone: "Europe/Madrid"
+```
+
+Dni: `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`. Czas musi mieć format `HH:mm`; `02:46` jest poprawne, `2:46` nie. `draw.cron: "0"` włącza wyłącznie ręczne losowania.
+
+Przypomnienia wymagają `reminder.minutes > 0` i `broadcast.reminders: true`. Jeśli zapisany termin minął podczas startu, wykonywane jest jedno losowanie `RECOVERY`.
+
+`draw.min-players` dotyczy także `/vlottery raffle`. Anulowanie `LotteryPreDrawEvent` pozostawia rundę bez zmian.

@@ -1,30 +1,17 @@
 ---
-title: Instalación y actualización
-sidebar_label: Instalación y actualización
+title: "Installation and updates"
+sidebar_label: "Installation and updates"
 ---
 
-# Instalación y actualización
+# Installation and updates
 
-## Instalación nueva
+1. Stop the server.
+2. Install LuckPerms, Vault, an economy provider, PlaceholderAPI and DeluxeMenus.
+3. For the bundled menu, install Formatter, Math, Utils and vTime.
+4. Copy `vLottery-Paper-1.0.0.jar` into `plugins/`.
+5. Start the server and confirm that an economy provider is detected.
+6. Review `plugins/vLottery/config.yml` and test `/vlottery status`.
 
-1. Detén el servidor.
-2. Instala LuckPerms, Vault, un proveedor económico, PlaceholderAPI y DeluxeMenus.
-3. Para el menú incluido, instala también Formatter, Math y Utils desde PlaceholderAPI eCloud, además de vTime.
-4. Copia `vLottery-Paper-0.1.1.jar` a `plugins/`.
-5. Arranca el servidor y confirma que vLottery detecta el proveedor económico.
-6. Revisa `plugins/vLottery/config.yml`.
-7. Concede permisos administrativos y prueba `/vlottery status`.
+Before updating, stop the server and back up `plugins/vLottery/`, `plugins/DeluxeMenus/config.yml` and `plugins/DeluxeMenus/gui_menus/vLottery/`. Replace only the JAR, then test status, menu opening and a controlled purchase.
 
-El plugin instala los idiomas, datos y menús ausentes, registra el menú activo y recarga DeluxeMenus.
-
-## Actualización desde 1.0.0
-
-En este proyecto, el paquete correctivo `0.1.1` fue generado después de `1.0.0`, aunque su número sea menor.
-
-1. Detén el servidor.
-2. Copia toda la carpeta `plugins/vLottery/` y `plugins/DeluxeMenus/config.yml`.
-3. Sustituye el JAR por `vLottery-Paper-0.1.1.jar`.
-4. Arranca y revisa los mensajes de migración del menú.
-5. Comprueba `/vlottery status`, el menú y una compra de prueba controlada.
-
-Los menús resumidos sin modificar de 1.0.0 se respaldan y actualizan. Un menú personalizado se conserva.
+Existing menu files are not overwritten automatically. Preserve customizations and compare new defaults manually.

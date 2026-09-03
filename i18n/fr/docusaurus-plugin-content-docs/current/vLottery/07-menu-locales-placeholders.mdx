@@ -1,0 +1,23 @@
+---
+title: "Menu, langues et placeholders"
+sidebar_label: "Menu, langues et placeholders"
+---
+
+# Menu, langues et placeholders
+
+Langues : `en_US`, `es_ES`, `de_DE`, `fr_FR`, `pt_BR`, `pl_PL`. Messages dans `plugins/vLottery/lang/` ; menus dans `plugins/DeluxeMenus/gui_menus/vLottery/<locale>/loteria.yml`. ID actif `vlottery` ; `/loteria` ouvre 54 cases avec actualisation chaque seconde.
+
+| Placeholder | Valeur |
+|---|---|
+| `%vlottery_jackpot%` | Jackpot |
+| `%vlottery_pot%` | Cagnotte |
+| `%vlottery_tickets%` | Tickets du joueur contextuel ; sinon 0 |
+| `%vlottery_tickets_<name>%` | Tickets du nom indiqué |
+| `%vlottery_nextdraw%` | Date ou texte du mode manuel |
+| `%vlottery_totaltickets%` | Tickets du tour |
+| `%vlottery_ticketprice%` | Prix unitaire |
+| `%vlottery_players%` | Participants distincts |
+| `%vlottery_totaldraws%` | Tours fermés |
+| `%vlottery_currency%` | Devise configurée/Vault |
+
+vTime : `%vtime_corta_{vlottery_nextdraw}%`. `nextdraw` est une date, pas le compte à rebours de `/status`.

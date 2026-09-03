@@ -1,0 +1,17 @@
+---
+title: "Solução de problemas, FAQ e limites"
+sidebar_label: "Solução de problemas, FAQ e limites"
+---
+
+# Solução de problemas, FAQ e limites
+
+- **Falha ao iniciar:** verifique Java 21, Paper, dependências e economia Vault.
+- **Reload rejeitado:** confira locale, cron, zona, efeitos, intervalos, webhook e YAML.
+- **`%...%` bruto:** instale Formatter, Math, Utils e vTime e recarregue.
+- **Sem vencedor:** `draw.min-players` conta jogadores distintos.
+- **Prêmio pendente:** não apague `pending-prizes`; corrija Vault e permita novas tentativas.
+- **Sem Discord:** confira interruptores, webhook, toggle e avisos HTTP.
+
+Mais bilhetes não garantem vitória. O jackpot é todo o pote somente com `draw.portion: 1`. Sorteios manuais respeitam o mínimo; `draw.cron: "0"` ativa modo manual.
+
+Vault não fornece chave universal de idempotência. A persistência reduz riscos, mas não oferece garantia absoluta se o processo parar exatamente no limite do depósito externo. [Não verificado] Nenhum webhook real ou revisão gráfica final; Formatter, Math e Utils não foram testados funcionalmente no runtime isolado.

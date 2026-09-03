@@ -1,0 +1,33 @@
+---
+title: "Configuration"
+sidebar_label: "Configuration"
+---
+
+# Configuration
+
+Fichier : `plugins/vLottery/config.yml`. Un rechargement invalide conserve les réglages précédents.
+
+| Clé | Défaut | Règle |
+|---|---:|---|
+| `locale` | `en_US` | six locales prises en charge |
+| `economy.currency-name` | vide | Texte/placeholder ; vide utilise Vault |
+| `ticket.price` | `100.0` | Supérieur à 0 |
+| `draw.cron` | `wed 18:00, sun 12:00` | Liste hebdomadaire ou `0` |
+| `draw.timezone` | `Europe/Madrid` | Zone IANA valide |
+| `draw.portion` | `0.88` | Entre 0 et 1 |
+| `draw.min-players` | `2` | Minimum 1 |
+| `pot-milestone-thresholds` | vide | Montants positifs séparés par virgules |
+| `reminder.minutes` | `0` | Non négatif |
+| `broadcast.reminders` / `winners` | `false` / `true` | Annonces en jeu |
+| `broadcast.title.enabled` | `true` | Titre du gagnant |
+| `broadcast.title.fade-in/stay/fade-out` | `10/70/20` | 1–100 ticks chacun |
+
+Racine buffs `lottery.buffs.perTicket` : `enabled`, `secondsPerTicket`, `roundUnitSeconds`, minimums/maximums facultatifs, `effects`, `applyToWinners`. Les valeurs sont non négatives et un minimum ne dépasse pas son maximum. Amplificateur `0` = niveau I, `1` = niveau II.
+
+La messagerie comprend interrupteur général, capacité de file, limite de débit, tentatives, paramètres Discord et toggles pour rappels, gagnants, annulations, dons et paliers. Capacités, périodes et tentatives doivent être positives.
+
+Chemins complets de messagerie : `messaging.enabled`, `messaging.queue.capacity`, `messaging.rate-limit.capacity`, `messaging.rate-limit.refill-tokens`, `messaging.rate-limit.refill-period-seconds`, `messaging.retry.max-attempts`, `messaging.backends.discord.enabled`, `messaging.backends.discord.webhooks.default`, `messaging.backends.discord.username`, `messaging.backends.discord.avatar-url`, `messaging.notifications.draw-reminders`, `messaging.notifications.winners`, `messaging.notifications.draw-cancelled`, `messaging.notifications.pot-donations` et `messaging.notifications.pot-milestones`.
+
+## Autres chemins exacts
+
+Les chemins complets regroupés ci-dessus sont `broadcast.winners`, `broadcast.title.fade-in`, `broadcast.title.stay`, `broadcast.title.fade-out`, `lottery.buffs.perTicket.enabled`, `lottery.buffs.perTicket.secondsPerTicket`, `lottery.buffs.perTicket.roundUnitSeconds`, `lottery.buffs.perTicket.minPerPlayerSeconds`, `lottery.buffs.perTicket.maxPerPlayerSeconds`, `lottery.buffs.perTicket.globalPoolMinSeconds`, `lottery.buffs.perTicket.globalPoolMaxSeconds`, `lottery.buffs.perTicket.effects` et `lottery.buffs.perTicket.applyToWinners`.

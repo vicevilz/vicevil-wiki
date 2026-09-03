@@ -1,0 +1,22 @@
+---
+title: "Commands and permissions"
+sidebar_label: "Commands and permissions"
+---
+
+# Commands and permissions
+
+Aliases: `/vlotto`, `/lottery`, `/lotto`.
+
+| Command | Permission | Console |
+|---|---|---|
+| `/vlottery` | `vlottery.use` | Yes |
+| `/vlottery buy <amount>` | `vlottery.buy` | No |
+| `/vlottery leaderboard` | `vlottery.leaderboard` | Yes |
+| `/vlottery status` | `vlottery.status` | Yes |
+| `/vlottery donate <amount> [private]` | `vlottery.admin.donate` | Yes |
+| `/vlottery raffle` | `vlottery.admin.raffle` | Yes |
+| `/vlottery reload` | `vlottery.admin.reload` | Yes |
+
+`donate` adds funds directly to the pot; it does not withdraw from the sender. `private` suppresses public, Discord and milestone announcements.
+
+`vlottery.use`, `buy`, `leaderboard`, `status` and `notify` default to `true`. `vlottery.admin` and its children default to `op`. `vlottery.notify` controls received broadcasts and titles.

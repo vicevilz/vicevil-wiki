@@ -1,0 +1,19 @@
+---
+title: "Utilisation, chances et gains"
+sidebar_label: "Utilisation, chances et gains"
+---
+
+# Utilisation, chances et gains
+
+`/vlottery` présente le tour. `/vlottery buy 10` achète dix tickets. `/vlottery status` affiche cagnotte, jackpot et temps restant ; `/vlottery leaderboard` classe le tour actuel.
+
+```text
+chance = tickets du joueur / tickets totaux
+jackpot = cagnotte × draw.portion
+```
+
+Le jackpot est arrondi vers le bas selon la précision économique ; le reste demeure dans la cagnotte. Si les participants distincts sont moins nombreux que `draw.min-players`, le tour se ferme sans gagnant et conserve cagnotte et tickets.
+
+L'obligation de paiement est enregistrée avant le dépôt Vault. Les gains en attente sont réessayés et un gagnant hors ligne reçoit un avis à sa connexion.
+
+Les buffs utilisent les tickets et `secondsPerTicket`. Une durée `0` dans `EFFECT:AMPLIFIER:DURATION` emploie l'allocation calculée ; une valeur positive impose une durée fixe.

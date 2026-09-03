@@ -1,0 +1,22 @@
+---
+title: "Commandes et permissions"
+sidebar_label: "Commandes et permissions"
+---
+
+# Commandes et permissions
+
+Alias : `/vlotto`, `/lottery`, `/lotto`.
+
+| Commande | Permission | Console |
+|---|---|---|
+| `/vlottery` | `vlottery.use` | Oui |
+| `/vlottery buy <quantité>` | `vlottery.buy` | Non |
+| `/vlottery leaderboard` | `vlottery.leaderboard` | Oui |
+| `/vlottery status` | `vlottery.status` | Oui |
+| `/vlottery donate <montant> [private]` | `vlottery.admin.donate` | Oui |
+| `/vlottery raffle` | `vlottery.admin.raffle` | Oui |
+| `/vlottery reload` | `vlottery.admin.reload` | Oui |
+
+`donate` ajoute directement à la cagnotte sans débiter l'expéditeur. `private` supprime les annonces publiques, Discord et de palier.
+
+`use`, `buy`, `leaderboard`, `status` et `notify` valent `true` par défaut ; `vlottery.admin` et ses enfants sont réservés aux `op`. `vlottery.notify` contrôle les annonces et titres reçus.

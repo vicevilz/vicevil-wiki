@@ -1,0 +1,20 @@
+---
+title: "Draw scheduling"
+sidebar_label: "Draw scheduling"
+---
+
+# Draw scheduling
+
+`draw.cron` is a weekly list, not UNIX cron:
+
+```yaml
+draw:
+  cron: "wed 18:00, sun 12:00"
+  timezone: "Europe/Madrid"
+```
+
+Valid days: `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`. Time must use `HH:mm`; `02:46` is valid and `2:46` is not. Use `draw.cron: "0"` for manual-only draws.
+
+Reminders require `reminder.minutes > 0` and `broadcast.reminders: true`. If the stored date is overdue at startup, one `RECOVERY` draw runs before the next date is scheduled.
+
+`draw.min-players` also applies to `/vlottery raffle`. Cancelling `LotteryPreDrawEvent` leaves the round unchanged.

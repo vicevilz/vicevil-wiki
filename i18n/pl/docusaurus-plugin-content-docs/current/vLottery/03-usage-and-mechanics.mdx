@@ -1,0 +1,19 @@
+---
+title: "Użycie, szanse i nagrody"
+sidebar_label: "Użycie, szanse i nagrody"
+---
+
+# Użycie, szanse i nagrody
+
+`/vlottery` pokazuje rundę. `/vlottery buy 10` kupuje dziesięć losów. `/vlottery status` pokazuje pulę, jackpot i czas; `/vlottery leaderboard` sortuje bieżącą rundę.
+
+```text
+szansa = losy gracza / wszystkie losy rundy
+jackpot = pula × draw.portion
+```
+
+Jackpot jest zaokrąglany w dół do precyzji ekonomii; reszta pozostaje w puli. Gdy liczba różnych uczestników jest mniejsza niż `draw.min-players`, runda kończy się bez zwycięzcy, zachowując pulę i losy.
+
+Zobowiązanie nagrody jest zapisywane przed wpłatą Vault. Oczekujące nagrody są ponawiane, a zwycięzca offline otrzymuje wiadomość po wejściu.
+
+Buffy zależą od losów i `secondsPerTicket`. Czas `0` w `EFFECT:AMPLIFIER:DURATION` używa obliczonego przydziału; wartość dodatnia ustala czas.

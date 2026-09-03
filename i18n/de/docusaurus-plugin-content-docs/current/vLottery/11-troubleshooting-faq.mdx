@@ -1,0 +1,17 @@
+---
+title: "Fehlerbehebung, FAQ und Grenzen"
+sidebar_label: "Fehlerbehebung, FAQ und Grenzen"
+---
+
+# Fehlerbehebung, FAQ und Grenzen
+
+- **Startfehler:** Java 21, Paper, Abhängigkeiten und Vault-Economy prüfen.
+- **Reload abgelehnt:** Locale, Cron, Zone, Effekte, Bereiche, Webhook und YAML prüfen.
+- **Rohe `%...%`:** Formatter, Math, Utils und vTime installieren und neu laden.
+- **Kein Gewinner:** `draw.min-players` zählt verschiedene Spieler.
+- **Ausstehender Gewinn:** `pending-prizes` nicht löschen; Vault reparieren und Wiederholungen zulassen.
+- **Kein Discord:** Schalter, Webhook, Event-Toggle und HTTP-Warnungen prüfen.
+
+Mehr Lose garantieren keinen Gewinn. Der gesamte Pot wird nur mit `draw.portion: 1` ausgezahlt. Manuelle Ziehungen beachten das Minimum; `draw.cron: "0"` aktiviert den manuellen Modus.
+
+Vault bietet keinen universellen Idempotenzschlüssel. Persistenz reduziert Risiken, kann aber einen Abbruch exakt an der externen Einzahlungsgrenze nicht absolut absichern. [Nicht verifiziert] Kein echter Discord-Webhook und keine abschließende grafische Prüfung; Formatter, Math und Utils wurden im isolierten Runtime-Test nicht funktional geprüft.

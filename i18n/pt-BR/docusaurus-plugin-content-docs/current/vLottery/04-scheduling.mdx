@@ -1,0 +1,20 @@
+---
+title: "Agendamento dos sorteios"
+sidebar_label: "Agendamento dos sorteios"
+---
+
+# Agendamento dos sorteios
+
+`draw.cron` é uma lista semanal, não cron UNIX:
+
+```yaml
+draw:
+  cron: "wed 18:00, sun 12:00"
+  timezone: "Europe/Madrid"
+```
+
+Dias: `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`. O horário exige `HH:mm`; `02:46` é válido e `2:46` não. Use `draw.cron: "0"` para sorteios apenas manuais.
+
+Lembretes exigem `reminder.minutes > 0` e `broadcast.reminders: true`. Se a data salva estiver vencida ao iniciar, ocorre exatamente um sorteio `RECOVERY`.
+
+`draw.min-players` também vale para `/vlottery raffle`. Cancelar `LotteryPreDrawEvent` mantém a rodada intacta.

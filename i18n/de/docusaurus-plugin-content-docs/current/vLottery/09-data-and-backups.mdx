@@ -1,0 +1,12 @@
+---
+title: "Daten und Sicherungen"
+sidebar_label: "Daten und Sicherungen"
+---
+
+# Daten und Sicherungen
+
+`config.yml` enthält Einstellungen, `lang/<locale>.yml` Nachrichten, `data.yml` Runde/Pot/Statistiken/ausstehende Gewinne und `sticky_notifications.yml` Offline-Hinweise/Buffs. Die jeweiligen `.bak`-Dateien sind automatische Vorgängerkopien.
+
+Server stoppen und `plugins/vLottery/`, `DeluxeMenus/config.yml` sowie `gui_menus/vLottery/` sichern. Laufende Daten niemals bearbeiten.
+
+`data.yml` enthält `round`, `global`, `players` und `pending-prizes`. Spieler-Schlüssel müssen echte UUIDs sein. Ungültiges YAML oder ein Schema ungleich `1` verhindert sicheres Laden. Fremddaten nur mit passender Zuordnung migrieren.

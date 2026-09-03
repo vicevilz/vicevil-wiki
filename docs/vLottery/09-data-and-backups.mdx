@@ -1,0 +1,19 @@
+---
+title: "Data and backups"
+sidebar_label: "Data and backups"
+---
+
+# Data and backups
+
+| File | Contents |
+|---|---|
+| `config.yml` | Settings |
+| `lang/<locale>.yml` | Messages |
+| `data.yml` | Round, pot, statistics and pending prizes |
+| `data.yml.bak` | Previous automatic backup |
+| `sticky_notifications.yml` | Offline notices and buffs |
+| `sticky_notifications.yml.bak` | Previous automatic backup |
+
+Stop the server before copying `plugins/vLottery/`, `DeluxeMenus/config.yml` and `gui_menus/vLottery/`. Never edit live data.
+
+`data.yml` contains `round`, `global`, `players` and `pending-prizes`. Player keys must be real UUIDs. Invalid YAML or a schema other than `1` prevents safe loading. Do not migrate another plugin's data without a specific mapping.

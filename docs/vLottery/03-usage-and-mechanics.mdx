@@ -1,0 +1,19 @@
+---
+title: "Usage, odds and prizes"
+sidebar_label: "Usage, odds and prizes"
+---
+
+# Usage, odds and prizes
+
+`/vlottery` shows the current round. `/vlottery buy 10` buys ten tickets. `/vlottery status` shows pot, jackpot and remaining time; `/vlottery leaderboard` ranks the current round.
+
+```text
+odds = player tickets / total round tickets
+jackpot = pot × draw.portion
+```
+
+The jackpot is rounded down to the economy's supported precision; the remainder stays in the pot. If distinct participants are below `draw.min-players`, the round closes without a winner while pot and tickets roll over.
+
+The prize obligation is persisted before the Vault deposit. Pending prizes are retried and offline winners receive a notice when joining.
+
+Buffs use a pool based on tickets and `secondsPerTicket`. Duration `0` in `EFFECT:AMPLIFIER:DURATION` uses the calculated allocation; any positive value is fixed.

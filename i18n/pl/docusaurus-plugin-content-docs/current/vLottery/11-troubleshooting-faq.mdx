@@ -1,0 +1,17 @@
+---
+title: "Problemy, FAQ i ograniczenia"
+sidebar_label: "Problemy, FAQ i ograniczenia"
+---
+
+# Problemy, FAQ i ograniczenia
+
+- **Błąd startu:** sprawdź Java 21, Paper, zależności i ekonomię Vault.
+- **Reload odrzucony:** sprawdź locale, cron, strefę, efekty, zakresy, webhook i YAML.
+- **Surowe `%...%`:** zainstaluj Formatter, Math, Utils i vTime, potem przeładuj.
+- **Brak zwycięzcy:** `draw.min-players` liczy różnych graczy.
+- **Oczekująca nagroda:** nie usuwaj `pending-prizes`; napraw Vault i pozwól na ponowienia.
+- **Brak Discord:** sprawdź przełączniki, webhook, toggle i ostrzeżenia HTTP.
+
+Więcej losów nie gwarantuje wygranej. Jackpot równa się całej puli tylko przy `draw.portion: 1`. Ręczne losowania przestrzegają minimum; `draw.cron: "0"` włącza tryb ręczny.
+
+Vault nie oferuje uniwersalnego klucza idempotencji. Trwały zapis zmniejsza ryzyko, ale nie daje absolutnej gwarancji przy zatrzymaniu dokładnie na granicy zewnętrznej wpłaty. [Niezweryfikowane] Nie testowano prawdziwego webhooka ani końcowego wyglądu; Formatter, Math i Utils nie były testowane funkcjonalnie w izolowanym środowisku.

@@ -1,38 +1,20 @@
 ---
-title: Características y compatibilidad
-sidebar_label: Características y compatibilidad
+title: "Features and requirements"
+sidebar_label: "Features and requirements"
 ---
 
-# Características y compatibilidad
+# Features and requirements
 
-vLottery permite comprar boletos con la economía del servidor. Cada boleto representa el mismo peso en el sorteo, por lo que un jugador con más boletos tiene una probabilidad proporcionalmente mayor.
+Every ticket has equal weight. More tickets proportionally increase a player's odds, but never guarantee a win.
 
-## Funciones confirmadas
+Confirmed features include Vault purchases, a persistent pot, partial jackpot and rollover, automatic/manual/recovery draws, offline prizes, participation buffs, leaderboard, six locales, DeluxeMenus, PlaceholderAPI, Discord and public Bukkit events.
 
-- Boletos con precio configurable y cobro mediante Vault.
-- Bote persistente, jackpot parcial y rollover.
-- Sorteos automáticos, manuales y recuperación de un sorteo vencido.
-- Programación semanal y zona horaria configurables.
-- Premios a jugadores conectados o desconectados.
-- Buffs de participación distribuidos por peso.
-- Estadísticas, clasificación y PlaceholderAPI.
-- Menú DeluxeMenus en seis idiomas.
-- Webhook de Discord con cola, límite de envío y reintentos.
-- Eventos Bukkit públicos para compras, sorteos, premios y cambios del bote.
-
-## Requisitos
-
-| Componente | Requisito |
+| Component | Requirement |
 |---|---|
-| Servidor | Paper con API 1.21 |
-| Java | Java 21 o posterior compatible |
-| LuckPerms | Obligatorio |
-| Vault | Obligatorio |
-| Proveedor económico | Obligatorio y registrado en Vault |
-| PlaceholderAPI | Obligatorio |
-| DeluxeMenus | Obligatorio |
-| Formatter, Math, Utils y vTime | Necesarios para todos los formatos compuestos del menú incluido |
+| Server | Paper API 1.21 |
+| Java | Java 21 |
+| Plugins | LuckPerms, Vault, PlaceholderAPI and DeluxeMenus |
+| Economy | A Vault-registered economy provider |
+| Bundled menu | Formatter, Math, Utils and vTime for every composite format |
 
-## Compatibilidad verificada
-
-La versión correctiva 0.1.1 usa bytecode Java 21 y fue validada en Paper 1.21 y Paper 1.21.11. No se afirma compatibilidad funcional completa con Spigot, Folia u otras versiones no probadas.
+vLottery 1.0.0 was validated on Paper 1.21 and 1.21.11. Compatibility is not claimed for untested platforms.

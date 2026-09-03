@@ -1,0 +1,12 @@
+---
+title: "Données et sauvegardes"
+sidebar_label: "Données et sauvegardes"
+---
+
+# Données et sauvegardes
+
+`config.yml` contient les réglages, `lang/<locale>.yml` les messages, `data.yml` le tour/la cagnotte/les statistiques/les gains en attente, et `sticky_notifications.yml` les avis/buffs hors ligne. Les fichiers `.bak` sont les copies automatiques précédentes.
+
+Arrêtez le serveur puis sauvegardez `plugins/vLottery/`, `DeluxeMenus/config.yml` et `gui_menus/vLottery/`. Ne modifiez jamais les données actives.
+
+`data.yml` contient `round`, `global`, `players` et `pending-prizes`. Les clés joueurs doivent être de vrais UUID. Un YAML invalide ou un schéma différent de `1` empêche le chargement sûr. Ne migrez pas d'autres données sans correspondance dédiée.

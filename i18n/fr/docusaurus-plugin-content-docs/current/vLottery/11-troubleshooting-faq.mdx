@@ -1,0 +1,17 @@
+---
+title: "Dépannage, FAQ et limites"
+sidebar_label: "Dépannage, FAQ et limites"
+---
+
+# Dépannage, FAQ et limites
+
+- **Échec au démarrage :** vérifiez Java 21, Paper, dépendances et économie Vault.
+- **Rechargement refusé :** vérifiez locale, cron, zone, effets, plages, webhook et YAML.
+- **`%...%` brut :** installez Formatter, Math, Utils et vTime puis rechargez.
+- **Pas de gagnant :** `draw.min-players` compte les joueurs distincts.
+- **Gain en attente :** ne supprimez pas `pending-prizes` ; réparez Vault et laissez réessayer.
+- **Pas de Discord :** contrôlez interrupteurs, webhook, toggle et avertissements HTTP.
+
+Plus de tickets ne garantit pas la victoire. Le jackpot égale toute la cagnotte seulement avec `draw.portion: 1`. Les tirages manuels respectent le minimum ; `draw.cron: "0"` active le mode manuel.
+
+Vault ne fournit pas de clé d'idempotence universelle. La persistance réduit le risque sans garantie absolue si le processus s'arrête exactement à la frontière du dépôt externe. [Non vérifié] Aucun webhook Discord réel ni contrôle graphique final ; Formatter, Math et Utils n'ont pas été testés fonctionnellement dans l'environnement isolé.

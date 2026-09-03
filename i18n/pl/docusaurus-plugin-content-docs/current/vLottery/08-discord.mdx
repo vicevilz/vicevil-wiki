@@ -1,0 +1,14 @@
+---
+title: "Discord i powiadomienia"
+sidebar_label: "Discord i powiadomienia"
+---
+
+# Discord i powiadomienia
+
+Discord działa tylko przy włączonych `messaging.enabled`, `messaging.backends.discord.enabled` i niepustym webhooku.
+
+Embeds mogą dotyczyć przypomnień, zwycięzców, rollover, publicznych darowizn i progów. Każdy typ ma przełącznik w `messaging.notifications`. Prywatne darowizny nigdy nie są wysyłane.
+
+Ograniczona kolejka FIFO stosuje rate limit i ponowienia dla błędów tymczasowych. Przy odrzuconej wiadomości sprawdź konsolę.
+
+Nie publikuj webhooka. Po ujawnieniu wygeneruj nowy w Discord i zaktualizuj `config.yml`.

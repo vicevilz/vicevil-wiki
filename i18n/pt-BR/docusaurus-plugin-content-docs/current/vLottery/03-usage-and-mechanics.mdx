@@ -1,0 +1,19 @@
+---
+title: "Uso, chances e prêmios"
+sidebar_label: "Uso, chances e prêmios"
+---
+
+# Uso, chances e prêmios
+
+`/vlottery` mostra a rodada. `/vlottery buy 10` compra dez bilhetes. `/vlottery status` mostra pote, jackpot e tempo restante; `/vlottery leaderboard` classifica a rodada atual.
+
+```text
+chance = bilhetes do jogador / bilhetes totais
+jackpot = pote × draw.portion
+```
+
+O jackpot é arredondado para baixo conforme a precisão da economia; o restante permanece no pote. Se houver menos participantes distintos que `draw.min-players`, a rodada fecha sem vencedor e conserva pote e bilhetes.
+
+A obrigação do prêmio é salva antes do depósito Vault. Prêmios pendentes são tentados novamente e vencedores offline recebem aviso ao entrar.
+
+Buffs usam os bilhetes e `secondsPerTicket`. Duração `0` em `EFFECT:AMPLIFIER:DURATION` usa a alocação calculada; valor positivo fixa a duração.

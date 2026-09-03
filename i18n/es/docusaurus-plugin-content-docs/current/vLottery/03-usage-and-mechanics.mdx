@@ -1,0 +1,19 @@
+---
+title: "Uso, probabilidades y premios"
+sidebar_label: "Uso, probabilidades y premios"
+---
+
+# Uso, probabilidades y premios
+
+`/vlottery` muestra la ronda. `/vlottery buy 10` compra diez boletos. `/vlottery status` muestra bote, jackpot y tiempo; `/vlottery leaderboard` ordena la ronda actual.
+
+```text
+probabilidad = boletos del jugador / boletos totales
+jackpot = bote × draw.portion
+```
+
+El jackpot se redondea hacia abajo a los decimales de la economía; el resto permanece en el bote. Si faltan jugadores distintos según `draw.min-players`, se cierra una ronda sin ganador y se conservan bote y boletos.
+
+El premio se persiste antes de depositarse. Los premios pendientes se reintentan y un ganador desconectado recibe un aviso al entrar.
+
+Los buffs usan un pool basado en boletos y `secondsPerTicket`. Duración `0` en `EFFECT:AMPLIFIER:DURATION` usa el reparto calculado; otro valor fija la duración.

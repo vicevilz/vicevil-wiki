@@ -1,0 +1,22 @@
+---
+title: "Komendy i uprawnienia"
+sidebar_label: "Komendy i uprawnienia"
+---
+
+# Komendy i uprawnienia
+
+Aliasy: `/vlotto`, `/lottery`, `/lotto`.
+
+| Komenda | Uprawnienie | Konsola |
+|---|---|---|
+| `/vlottery` | `vlottery.use` | Tak |
+| `/vlottery buy <liczba>` | `vlottery.buy` | Nie |
+| `/vlottery leaderboard` | `vlottery.leaderboard` | Tak |
+| `/vlottery status` | `vlottery.status` | Tak |
+| `/vlottery donate <kwota> [private]` | `vlottery.admin.donate` | Tak |
+| `/vlottery raffle` | `vlottery.admin.raffle` | Tak |
+| `/vlottery reload` | `vlottery.admin.reload` | Tak |
+
+`donate` dodaje środki bezpośrednio do puli i nie pobiera ich od nadawcy. `private` wyłącza ogłoszenia publiczne, Discord i progi.
+
+`use`, `buy`, `leaderboard`, `status` i `notify` domyślnie mają `true`; `vlottery.admin` i dzieci są dla `op`. `vlottery.notify` steruje otrzymywanymi ogłoszeniami i tytułami.

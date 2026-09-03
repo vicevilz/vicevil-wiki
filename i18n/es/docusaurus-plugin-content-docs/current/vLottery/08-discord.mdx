@@ -1,0 +1,14 @@
+---
+title: "Discord y notificaciones"
+sidebar_label: "Discord y notificaciones"
+---
+
+# Discord y notificaciones
+
+Discord funciona únicamente si `messaging.enabled`, `messaging.backends.discord.enabled` y un webhook no vacío están presentes.
+
+Puede enviar embeds para recordatorios, ganadores, rollover, donaciones públicas e hitos. Cada tipo tiene su toggle en `messaging.notifications`. Las donaciones `private` nunca se envían.
+
+La cola es FIFO, tiene capacidad limitada, control de ritmo y reintentos para rate limits o fallos temporales. Revisa los avisos de consola si se descarta un mensaje.
+
+No publiques el webhook. Si se filtra, regénéralo en Discord y actualiza `config.yml`.

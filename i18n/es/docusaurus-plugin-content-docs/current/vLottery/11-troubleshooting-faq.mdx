@@ -1,0 +1,19 @@
+---
+title: "Problemas, FAQ y limitaciones"
+sidebar_label: "Problemas, FAQ y limitaciones"
+---
+
+# Problemas, FAQ y limitaciones
+
+- **No arranca:** comprueba Java 21, Paper, dependencias y proveedor Vault.
+- **Recarga rechazada:** revisa locale, cron, zona, efectos, rangos, webhook y YAML; sigue activa la configuración anterior.
+- **Menú con `%...%`:** instala Formatter, Math, Utils y vTime, y recarga PlaceholderAPI/DeluxeMenus.
+- **Sin ganador:** `draw.min-players` cuenta jugadores distintos, no boletos.
+- **Premio pendiente:** no borres `pending-prizes`; corrige Vault y deja que reintente.
+- **Discord no envía:** comprueba interruptores, webhook, toggle y avisos HTTP.
+
+Más boletos aumentan la probabilidad, no garantizan ganar. El jackpot solo es todo el bote con `draw.portion: 1`. Los sorteos manuales respetan el mínimo y `draw.cron: "0"` activa modo manual.
+
+## Límites
+
+Vault no ofrece una clave idempotente universal; existe persistencia/conciliación, pero no garantía absoluta ante una caída en el instante exacto del depósito. [No verificado] No se probó un webhook real ni se hizo revisión visual final con captura. Formatter, Math y Utils no se probaron en el runtime aislado.

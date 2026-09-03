@@ -1,0 +1,19 @@
+---
+title: "Datos y copias de seguridad"
+sidebar_label: "Datos y copias de seguridad"
+---
+
+# Datos y copias de seguridad
+
+| Archivo | Contenido |
+|---|---|
+| `config.yml` | Configuración |
+| `lang/<locale>.yml` | Mensajes |
+| `data.yml` | Ronda, bote, estadísticas y premios pendientes |
+| `data.yml.bak` | Copia automática anterior |
+| `sticky_notifications.yml` | Avisos y buffs offline |
+| `sticky_notifications.yml.bak` | Copia automática anterior |
+
+Para respaldar, detén el servidor y copia `plugins/vLottery/`, `DeluxeMenus/config.yml` y `gui_menus/vLottery/`. No edites datos con el servidor activo.
+
+`data.yml` contiene `round`, `global`, `players` y `pending-prizes`. Las claves de jugadores deben ser UUID reales. YAML inválido o un esquema distinto de `1` impide una carga segura. No migres datos de otro plugin sin un mapeo específico.

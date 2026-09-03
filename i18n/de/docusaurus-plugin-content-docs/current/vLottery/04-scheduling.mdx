@@ -1,0 +1,20 @@
+---
+title: "Ziehungsplanung"
+sidebar_label: "Ziehungsplanung"
+---
+
+# Ziehungsplanung
+
+`draw.cron` ist eine Wochenliste, kein UNIX-Cron:
+
+```yaml
+draw:
+  cron: "wed 18:00, sun 12:00"
+  timezone: "Europe/Madrid"
+```
+
+Tage: `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`. Zeitformat zwingend `HH:mm`; `02:46` ist gültig, `2:46` nicht. `draw.cron: "0"` aktiviert nur manuelle Ziehungen.
+
+Erinnerungen benötigen `reminder.minutes > 0` und `broadcast.reminders: true`. Ist der gespeicherte Termin beim Start abgelaufen, erfolgt genau eine `RECOVERY`-Ziehung.
+
+`draw.min-players` gilt auch für `/vlottery raffle`. Eine Stornierung von `LotteryPreDrawEvent` lässt die Runde unverändert.

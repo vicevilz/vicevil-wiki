@@ -1,0 +1,12 @@
+---
+title: "Dados e backups"
+sidebar_label: "Dados e backups"
+---
+
+# Dados e backups
+
+`config.yml` contém configurações, `lang/<locale>.yml` mensagens, `data.yml` rodada/pote/estatísticas/prêmios pendentes e `sticky_notifications.yml` avisos/buffs offline. Os arquivos `.bak` são cópias automáticas anteriores.
+
+Pare o servidor e copie `plugins/vLottery/`, `DeluxeMenus/config.yml` e `gui_menus/vLottery/`. Nunca edite dados ativos.
+
+`data.yml` contém `round`, `global`, `players` e `pending-prizes`. Chaves de jogadores devem ser UUIDs reais. YAML inválido ou schema diferente de `1` impede carregamento seguro. Não migre dados externos sem mapeamento específico.

@@ -1,0 +1,12 @@
+---
+title: "Dane i kopie zapasowe"
+sidebar_label: "Dane i kopie zapasowe"
+---
+
+# Dane i kopie zapasowe
+
+`config.yml` zawiera ustawienia, `lang/<locale>.yml` wiadomości, `data.yml` rundę/pulę/statystyki/oczekujące nagrody, a `sticky_notifications.yml` powiadomienia/buffy offline. Pliki `.bak` są poprzednimi kopiami automatycznymi.
+
+Zatrzymaj serwer i skopiuj `plugins/vLottery/`, `DeluxeMenus/config.yml` oraz `gui_menus/vLottery/`. Nie edytuj aktywnych danych.
+
+`data.yml` zawiera `round`, `global`, `players`, `pending-prizes`. Klucze graczy muszą być prawdziwymi UUID. Nieprawidłowy YAML lub schema inne niż `1` blokują bezpieczny odczyt. Obce dane wymagają dedykowanego mapowania.

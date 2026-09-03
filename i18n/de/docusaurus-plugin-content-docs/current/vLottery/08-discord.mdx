@@ -1,0 +1,14 @@
+---
+title: "Discord und Benachrichtigungen"
+sidebar_label: "Discord und Benachrichtigungen"
+---
+
+# Discord und Benachrichtigungen
+
+Discord ist nur aktiv, wenn `messaging.enabled`, `messaging.backends.discord.enabled` und ein nicht leerer Webhook gesetzt sind.
+
+Embeds können Erinnerungen, Gewinner, Rollover, öffentliche Spenden und Meilensteine melden. Jeder Typ besitzt einen Toggle unter `messaging.notifications`. Private Spenden werden nie gesendet.
+
+Die begrenzte FIFO-Queue verwendet Rate-Limit und Wiederholungen bei temporären Fehlern. Bei verworfenen Nachrichten die Konsole prüfen.
+
+Webhook niemals veröffentlichen. Bei Offenlegung in Discord erneuern und `config.yml` aktualisieren.

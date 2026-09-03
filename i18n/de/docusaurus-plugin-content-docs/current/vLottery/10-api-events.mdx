@@ -1,0 +1,21 @@
+---
+title: "API und Events"
+sidebar_label: "API und Events"
+---
+
+# API und Events
+
+Paket: `net.vicevil.vlottery.api.event`.
+
+| Event | Abbrechbar | Daten |
+|---|---:|---|
+| `LotteryTicketPurchaseEvent` | Ja | Runde, Spieler, Lose, Preise |
+| `LotteryPreDrawEvent` | Ja | Trigger, Snapshot |
+| `LotteryDrawEvent` | Nein | Trigger, Snapshot, Gewinner, Gewinn |
+| `LotteryWinEvent` | Nein | Runde, Gewinner, Gewinn, ID |
+| `LotteryPotChangeEvent` | Nein | Alter/neuer Pot, Delta, Ursache, Akteur |
+| `LotteryRoundCancelEvent` | Nein | Trigger, Snapshot, Grund |
+
+Enums: `DrawTrigger` (`AUTOMATIC`, `MANUAL`, `RECOVERY`), `PotChangeCause` (`TICKET_PURCHASE`, `DONATION`, `PRIVATE_DONATION`, `PRIZE_PAYOUT`) und `RoundCancelReason` (`MINIMUM_PLAYERS`).
+
+Ein abgebrochener Kauf belastet nicht; ein abgebrochenes Pre-Draw lässt die Runde unverändert.

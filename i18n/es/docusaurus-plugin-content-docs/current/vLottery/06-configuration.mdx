@@ -1,0 +1,37 @@
+---
+title: "Configuración"
+sidebar_label: "Configuración"
+---
+
+# Configuración
+
+Archivo: `plugins/vLottery/config.yml`. Una recarga inválida conserva la configuración anterior.
+
+| Clave | Predeterminado | Regla |
+|---|---:|---|
+| `locale` | `en_US` | `en_US`, `es_ES`, `de_DE`, `fr_FR`, `pt_BR`, `pl_PL` |
+| `economy.currency-name` | vacío | Texto/placeholder; vacío usa Vault |
+| `ticket.price` | `100.0` | Mayor que 0 |
+| `draw.cron` | `wed 18:00, sun 12:00` | Lista semanal o `0` |
+| `draw.timezone` | `Europe/Madrid` | Zona IANA |
+| `draw.portion` | `0.88` | Entre 0 y 1 |
+| `draw.min-players` | `2` | Mínimo 1 |
+| `pot-milestone-thresholds` | vacío | Importes positivos separados por comas |
+| `reminder.minutes` | `0` | No negativo; 0 desactiva |
+| `broadcast.reminders` / `winners` | `false` / `true` | Anuncios en juego |
+| `broadcast.title.enabled` | `true` | Título del ganador |
+| `broadcast.title.fade-in/stay/fade-out` | `10/70/20` | Cada valor entre 1 y 100 ticks |
+
+## Buffs
+
+Raíz `lottery.buffs.perTicket`: `enabled`, `secondsPerTicket`, `roundUnitSeconds`, opcionales `minPerPlayerSeconds`, `maxPerPlayerSeconds`, `globalPoolMinSeconds`, `globalPoolMaxSeconds`, lista `effects` y `applyToWinners`. Los límites son no negativos y los mínimos no pueden superar máximos. Amplificador `0` es nivel I; `1`, nivel II.
+
+## Mensajería
+
+`messaging.enabled`; `queue.capacity`; `rate-limit.capacity`, `refill-tokens`, `refill-period-seconds`; `retry.max-attempts`; `backends.discord.enabled`, `webhooks.default`, `username`, `avatar-url`; y toggles `notifications.draw-reminders`, `winners`, `draw-cancelled`, `pot-donations`, `pot-milestones`. Capacidades, periodos e intentos deben ser positivos.
+
+Rutas completas de mensajería: `messaging.enabled`, `messaging.queue.capacity`, `messaging.rate-limit.capacity`, `messaging.rate-limit.refill-tokens`, `messaging.rate-limit.refill-period-seconds`, `messaging.retry.max-attempts`, `messaging.backends.discord.enabled`, `messaging.backends.discord.webhooks.default`, `messaging.backends.discord.username`, `messaging.backends.discord.avatar-url`, `messaging.notifications.draw-reminders`, `messaging.notifications.winners`, `messaging.notifications.draw-cancelled`, `messaging.notifications.pot-donations` y `messaging.notifications.pot-milestones`.
+
+## Rutas exactas adicionales
+
+Las rutas completas que aparecen agrupadas arriba son `broadcast.winners`, `broadcast.title.fade-in`, `broadcast.title.stay`, `broadcast.title.fade-out`, `lottery.buffs.perTicket.enabled`, `lottery.buffs.perTicket.secondsPerTicket`, `lottery.buffs.perTicket.roundUnitSeconds`, `lottery.buffs.perTicket.minPerPlayerSeconds`, `lottery.buffs.perTicket.maxPerPlayerSeconds`, `lottery.buffs.perTicket.globalPoolMinSeconds`, `lottery.buffs.perTicket.globalPoolMaxSeconds`, `lottery.buffs.perTicket.effects` y `lottery.buffs.perTicket.applyToWinners`.

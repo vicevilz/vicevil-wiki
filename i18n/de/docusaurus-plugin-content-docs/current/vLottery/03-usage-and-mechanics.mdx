@@ -1,0 +1,19 @@
+---
+title: "Benutzung, Chancen und Gewinne"
+sidebar_label: "Benutzung, Chancen und Gewinne"
+---
+
+# Benutzung, Chancen und Gewinne
+
+`/vlottery` zeigt die Runde. `/vlottery buy 10` kauft zehn Lose. `/vlottery status` zeigt Pot, Jackpot und Restzeit; `/vlottery leaderboard` sortiert die aktuelle Runde.
+
+```text
+Chance = eigene Lose / alle Lose der Runde
+Jackpot = Pot × draw.portion
+```
+
+Der Jackpot wird auf die Economy-Genauigkeit abgerundet; der Rest bleibt im Pot. Bei weniger unterschiedlichen Teilnehmern als `draw.min-players` endet die Runde ohne Gewinner, Pot und Lose werden übernommen.
+
+Die Gewinnverpflichtung wird vor der Vault-Einzahlung gespeichert. Ausstehende Gewinne werden erneut versucht; Offline-Gewinner erhalten beim Beitritt eine Nachricht.
+
+Buffs basieren auf Losen und `secondsPerTicket`. Dauer `0` in `EFFECT:AMPLIFIER:DURATION` nutzt die berechnete Zuteilung; ein positiver Wert ist fest.

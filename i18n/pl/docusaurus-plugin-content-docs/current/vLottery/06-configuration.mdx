@@ -1,0 +1,33 @@
+---
+title: "Konfiguracja"
+sidebar_label: "Konfiguracja"
+---
+
+# Konfiguracja
+
+Plik: `plugins/vLottery/config.yml`. Nieprawidłowe przeładowanie zachowuje poprzednie ustawienia.
+
+| Klucz | Domyślnie | Reguła |
+|---|---:|---|
+| `locale` | `en_US` | sześć obsługiwanych locale |
+| `economy.currency-name` | pusty | Tekst/placeholder; pusty używa Vault |
+| `ticket.price` | `100.0` | Większe od 0 |
+| `draw.cron` | `wed 18:00, sun 12:00` | Lista tygodniowa lub `0` |
+| `draw.timezone` | `Europe/Madrid` | Poprawna strefa IANA |
+| `draw.portion` | `0.88` | Od 0 do 1 |
+| `draw.min-players` | `2` | Minimum 1 |
+| `pot-milestone-thresholds` | pusty | Dodatnie kwoty po przecinku |
+| `reminder.minutes` | `0` | Nieujemne |
+| `broadcast.reminders` / `winners` | `false` / `true` | Ogłoszenia w grze |
+| `broadcast.title.enabled` | `true` | Tytuł zwycięzcy |
+| `broadcast.title.fade-in/stay/fade-out` | `10/70/20` | Każde 1–100 ticków |
+
+Korzeń buffów `lottery.buffs.perTicket`: `enabled`, `secondsPerTicket`, `roundUnitSeconds`, opcjonalne minima/maksima, `effects`, `applyToWinners`. Wartości nieujemne; minimum nie może przekraczać maksimum. Wzmacniacz `0` = poziom I, `1` = poziom II.
+
+Wiadomości obejmują główny przełącznik, pojemność kolejki, rate limit, próby, ustawienia Discord oraz przełączniki przypomnień, zwycięzców, anulowań, darowizn i progów. Pojemności, okresy i próby muszą być dodatnie.
+
+Pełne ścieżki wiadomości: `messaging.enabled`, `messaging.queue.capacity`, `messaging.rate-limit.capacity`, `messaging.rate-limit.refill-tokens`, `messaging.rate-limit.refill-period-seconds`, `messaging.retry.max-attempts`, `messaging.backends.discord.enabled`, `messaging.backends.discord.webhooks.default`, `messaging.backends.discord.username`, `messaging.backends.discord.avatar-url`, `messaging.notifications.draw-reminders`, `messaging.notifications.winners`, `messaging.notifications.draw-cancelled`, `messaging.notifications.pot-donations` i `messaging.notifications.pot-milestones`.
+
+## Pozostałe pełne ścieżki
+
+Pełne ścieżki zgrupowane powyżej to `broadcast.winners`, `broadcast.title.fade-in`, `broadcast.title.stay`, `broadcast.title.fade-out`, `lottery.buffs.perTicket.enabled`, `lottery.buffs.perTicket.secondsPerTicket`, `lottery.buffs.perTicket.roundUnitSeconds`, `lottery.buffs.perTicket.minPerPlayerSeconds`, `lottery.buffs.perTicket.maxPerPlayerSeconds`, `lottery.buffs.perTicket.globalPoolMinSeconds`, `lottery.buffs.perTicket.globalPoolMaxSeconds`, `lottery.buffs.perTicket.effects` i `lottery.buffs.perTicket.applyToWinners`.

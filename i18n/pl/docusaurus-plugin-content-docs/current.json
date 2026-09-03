@@ -1,0 +1,38 @@
+{
+  "sidebar.wikiSidebar.doc.Installation and updates": {
+    "message": "Instalacja i aktualizacje"
+  },
+  "sidebar.wikiSidebar.doc.Troubleshooting, FAQ and limitations": {
+    "message": "Problemy, FAQ i ograniczenia"
+  },
+  "sidebar.wikiSidebar.doc.Menu, languages and placeholders": {
+    "message": "Menu, języki i placeholdery"
+  },
+  "sidebar.wikiSidebar.doc.vLottery 1.0.0 Documentation": {
+    "message": "Dokumentacja vLottery 1.0.0"
+  },
+  "sidebar.wikiSidebar.doc.Features and requirements": {
+    "message": "Funkcje i wymagania"
+  },
+  "sidebar.wikiSidebar.doc.Draw scheduling": {
+    "message": "Harmonogram losowań"
+  },
+  "sidebar.wikiSidebar.doc.Usage, odds and prizes": {
+    "message": "Użycie, szanse i nagrody"
+  },
+  "sidebar.wikiSidebar.doc.Commands and permissions": {
+    "message": "Komendy i uprawnienia"
+  },
+  "sidebar.wikiSidebar.doc.Configuration": {
+    "message": "Konfiguracja"
+  },
+  "sidebar.wikiSidebar.doc.Discord and notifications": {
+    "message": "Discord i powiadomienia"
+  },
+  "sidebar.wikiSidebar.doc.API and events": {
+    "message": "API i zdarzenia"
+  },
+  "sidebar.wikiSidebar.doc.Data and backups": {
+    "message": "Dane i kopie zapasowe"
+  }
+}

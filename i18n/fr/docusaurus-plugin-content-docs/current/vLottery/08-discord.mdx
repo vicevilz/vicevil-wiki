@@ -1,0 +1,14 @@
+---
+title: "Discord et notifications"
+sidebar_label: "Discord et notifications"
+---
+
+# Discord et notifications
+
+Discord n'est actif que si `messaging.enabled`, `messaging.backends.discord.enabled` et un webhook non vide sont définis.
+
+Les embeds couvrent rappels, gagnants, rollover, dons publics et paliers. Chaque type possède un toggle sous `messaging.notifications`. Les dons privés ne sont jamais envoyés.
+
+La file FIFO limitée applique un contrôle de débit et des tentatives en cas d'erreur temporaire. Consultez la console lorsqu'un message est abandonné.
+
+Ne publiez jamais le webhook. Régénérez-le dans Discord s'il est exposé puis modifiez `config.yml`.
